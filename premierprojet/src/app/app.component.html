@@ -1,15 +1,15 @@
-<app-menu></app-menu>
+<app-menu [title]="title"></app-menu>
 <h1>{{ title }}</h1>
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">
 			<app-races></app-races>
-			<ul class="list-group">
+			<!-- <ul class="list-group">
 				<app-caracteristiques></app-caracteristiques>
 				<app-caracteristiques></app-caracteristiques>
 				<app-caracteristiques></app-caracteristiques>
 			</ul>
-			<button class="btn btn-success" [disabled]="!isAuth" (click)="onAllumer()">Tout allumer</button>
+			<button class="btn btn-success" [disabled]="!isAuth" (click)="onAllumer()">Tout allumer</button> -->
 		</div>
 	</div>
 </div>

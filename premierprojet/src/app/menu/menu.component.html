@@ -1,10 +1,10 @@
 <nav class="navbar navbar-light bg-light">
-  <p class="navbar-brand text-secondary" href="#">PonyRacer</p>
+  <p class="navbar-brand text-dark" href="#">{{ title }}</p>
   <button class="btn btn-success" (click)="collapsed = !collapsed" type="button"
     aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div [class.collapse]="collapsed" id="navbarToggleExternalContent">
-    <p>Races</p>
+    <p class="text-secondary">Races</p>
   </div>
 </nav>

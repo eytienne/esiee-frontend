@@ -6,10 +6,11 @@ import { Component } from '@angular/core';
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-	title = 'Course de Chevaux';
+	title = 'PonyRacer';
 	numberOfUsers = 146;
 	public name: string = 'Olivier';
 	isAuth = false;
+
 	constructor() {
 		setTimeout(
 			() => {
