@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { City } from 'src/lib/City';
+import { RacesService } from './races.service';
 
 @Component({
   selector: 'app-races',
@@ -7,10 +8,14 @@ import { City } from 'src/lib/City';
   styleUrls: ['./races.component.scss']
 })
 export class RacesComponent implements OnInit {
-  cities: Array<City>;
+  racesService: RacesService;
+
+  constructor(racesService: RacesService) {
+    this.racesService = racesService;
+  }
 
   ngOnInit(): void {
-    this.cities = [
+    this.racesService.cities = [
       { name: "Tokyo", status: 'on' },
       { name: "Paris", status: 'on' },
       { name: "Lyon", status: 'off' },
@@ -28,7 +33,7 @@ export class RacesComponent implements OnInit {
   }
 
   onSwitch(i: number) {
-    const city = this.cities[i];
+    const city = this.racesService.cities[i];
     city.status = city.status === 'on' ? 'off' : 'on';
   }
 }
