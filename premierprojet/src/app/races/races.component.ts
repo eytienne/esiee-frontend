@@ -11,8 +11,12 @@ export class RacesComponent implements OnInit {
 
   ngOnInit(): void {
     this.cities = [
-      { name: "Lyon", status: 'on' },
-      { name: "London", status: 'on' },
+      { name: "Tokyo", status: 'on' },
+      { name: "Paris", status: 'on' },
+      { name: "Lyon", status: 'off' },
+      { name: "Los Angeles", status: 'off' },
+      { name: "Moscou", status: 'off' },
+      { name: "Pékin", status: 'off' },
     ];
   }
 
