@@ -10,7 +10,10 @@ export class RacesComponent implements OnInit {
   cities: Array<City>;
 
   ngOnInit(): void {
-    this.cities = [{ name: "Lyon" }, { name: "London" }];
+    this.cities = [
+      { name: "Lyon", status: 'on' },
+      { name: "London", status: 'on' },
+    ];
   }
 
   onInput(e: Event, city: City) {
@@ -18,5 +21,10 @@ export class RacesComponent implements OnInit {
     let value = input.value.trim();
     input.value = null;
     if (value) city.name = value;
+  }
+
+  onSwitch(i: number) {
+    const city = this.cities[i];
+    city.status = city.status === 'on' ? 'off' : 'on';
   }
 }

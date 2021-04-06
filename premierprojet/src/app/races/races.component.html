@@ -1,5 +1,9 @@
-<div *ngFor="let city of cities" class="rounded p-3 city"
+<div *ngFor="let city of cities; index as i;" class="rounded p-3 city"
   [ngClass]="{ green: city.name === 'Lyon', red: city.name === 'London' }">
   <h2>{{ city.name }}</h2>
+  <button type="button" class="btn my-2" [ngClass]="city.status === 'on' ? 'btn-danger' : 'btn-success'"
+    (click)="onSwitch(i)">
+    {{ city.status === 'on' ? 'Eteindre' : 'Allumer' }}
+  </button>
   <input (change)="onInput($event, city)" type="text" class="form-control" placeholder="Enter city">
 </div>
