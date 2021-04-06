@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { RacesComponent } from './races/races.component';
 import { CaracteristiquesComponent } from './caracteristiques/caracteristiques.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RacesComponent,
-    CaracteristiquesComponent
+    CaracteristiquesComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
