@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RacesComponent } from './races/races.component';
 import { CaracteristiquesComponent } from './caracteristiques/caracteristiques.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { CaracteristiquesComponent } from './caracteristiques/caracteristiques.c
     CaracteristiquesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
