@@ -1,1 +1,5 @@
-<p>races works!</p>
+<div *ngFor="let city of cities" class="rounded p-3 city"
+  [ngClass]="{ green: city.name === 'Lyon', red: city.name === 'London' }">
+  <h2>{{ city.name }}</h2>
+  <input (change)="onInput($event, city)" type="text" class="form-control" placeholder="Enter city">
+</div>

@@ -7,18 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 	title = 'PonyRacer';
-	numberOfUsers = 146;
-	public name: string = 'Olivier';
-	isAuth = false;
-
-	constructor() {
-		setTimeout(
-			() => {
-				this.isAuth = true;
-			}, 2000
-		);
-	}
-	onAllumer() {
-		console.log('On allume tout !');
-	}
 }
