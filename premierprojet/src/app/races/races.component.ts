@@ -9,20 +9,19 @@ import { RacesService } from './races.service';
 })
 export class RacesComponent implements OnInit {
   racesService: RacesService;
+  horses: any[];
 
   constructor(racesService: RacesService) {
     this.racesService = racesService;
   }
 
   ngOnInit(): void {
-    this.racesService.cities = [
-      { name: "Tokyo", status: 'on' },
-      { name: "Paris", status: 'on' },
-      { name: "Lyon", status: 'off' },
-      { name: "Los Angeles", status: 'off' },
-      { name: "Moscou", status: 'off' },
-      { name: "Pékin", status: 'off' },
-    ];
+    this.racesService.horsesSubject.subscribe(horses => {
+      this.horses = horses;
+    });
+    console.log(this.horses);
+    this.racesService.emitHorsesSubject();
+    console.log(this.horses);
   }
 
   onInput(e: Event, city: City) {
