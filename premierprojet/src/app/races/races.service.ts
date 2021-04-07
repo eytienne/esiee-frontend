@@ -7,12 +7,12 @@ import { City } from 'src/lib/City';
 })
 export class RacesService {
   cities: Array<City> = [
-    { name: "Tokyo", status: 'on' },
-    { name: "Paris", status: 'on' },
-    { name: "Lyon", status: 'off' },
-    { name: "Los Angeles", status: 'off' },
-    { name: "Moscou", status: 'off' },
-    { name: "Pékin", status: 'off' },
+    { name: "Tokyo", status: 'on', speciality: "sushi" },
+    { name: "Paris", status: 'on', speciality: "régime" },
+    { name: "Lyon", status: 'off', speciality: "praline rose" },
+    { name: "Los Angeles", status: 'off', speciality: "smoothie" },
+    { name: "Moscou", status: 'off', speciality: "gras" },
+    { name: "Pékin", status: 'off', speciality: "rouleaux de printemps" },
   ];
   private horses = [
     { name: 'babouche', type: 'carne' },

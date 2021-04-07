@@ -1,0 +1,5 @@
+<div *ngIf="index != -1" class="rounded p-3 city">
+  <h2> {{ racesService.cities[index].name }} </h2>
+  <h2> {{ racesService.cities[index].speciality }} </h2>
+  <a (click)="goBack()" href="javascript:void(0)">Retour à la liste</a>
+</div>

@@ -1,0 +1,3 @@
+<button (click)="onConnection()" class="btn" [ngClass]="appService.auth ? 'btn-danger' : 'btn-success'">
+  {{ appService.auth ? 'Se déconnecter' : 'Se connecter' }}
+</button>

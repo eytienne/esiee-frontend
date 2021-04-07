@@ -1,9 +1,15 @@
-<div *ngFor="let city of racesService.cities | slice:0:4; index as i;" class="rounded p-3 city"
-  [ngClass]="{ green: city.name === 'Lyon', red: city.name === 'London' }">
-  <h2>{{ city.name }}</h2>
-  <button type="button" class="btn my-2" [ngClass]="city.status === 'on' ? 'btn-danger' : 'btn-success'"
-    (click)="onSwitch(i)">
-    {{ city.status === 'on' ? 'Eteindre' : 'Allumer' }}
-  </button>
-  <input (change)="onInput($event, city)" type="text" class="form-control" placeholder="Enter city">
-</div>
+<ng-template [ngIf]="focusIndex != -1" [ngIfElse]="listing">
+  <app-single-race [(index)]="focusIndex"></app-single-race>
+</ng-template>
+<ng-template #listing>
+  <div *ngFor="let city of racesService.cities | slice:0:4; index as i;" class="rounded p-3 city"
+    [ngClass]="{ green: city.name === 'Lyon', red: city.name === 'London' }">
+    <h2>{{ city.name }}</h2>
+    <a (click)="focusIndex = i" class="mr-2" href="javascript:void(0)">Détails</a>
+    <button type="button" class="btn my-2" [ngClass]="city.status === 'on' ? 'btn-danger' : 'btn-success'"
+      (click)="onSwitch(i)">
+      {{ city.status === 'on' ? 'Eteindre' : 'Allumer' }}
+    </button>
+    <input (change)="onInput($event, city)" type="text" class="form-control" placeholder="Enter city">
+  </div>
+</ng-template>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { City } from 'src/lib/City';
+import { AppService } from '../app.service';
 import { RacesService } from './races.service';
 
 @Component({
@@ -8,20 +10,20 @@ import { RacesService } from './races.service';
   styleUrls: ['./races.component.scss']
 })
 export class RacesComponent implements OnInit {
-  racesService: RacesService;
   horses: any[];
+  focusIndex = -1;
 
-  constructor(racesService: RacesService) {
-    this.racesService = racesService;
+  constructor(public racesService: RacesService, appService: AppService, router: Router) {
+    if (!appService.auth) {
+      router.navigate(["auth"]);
+    }
   }
 
   ngOnInit(): void {
     this.racesService.horsesSubject.subscribe(horses => {
       this.horses = horses;
     });
-    console.log(this.horses);
     this.racesService.emitHorsesSubject();
-    console.log(this.horses);
   }
 
   onInput(e: Event, city: City) {

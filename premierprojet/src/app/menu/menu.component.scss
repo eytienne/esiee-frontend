@@ -1,3 +1,7 @@
 nav > #navbarToggleExternalContent {
   flex-basis: 100%;
+
+  > a {
+    display: block;
+  }
 }

@@ -1,10 +1,12 @@
 <nav class="navbar navbar-light bg-light">
-  <p class="navbar-brand text-dark" href="#">{{ title }}</p>
+  <p class="navbar-brand text-dark">{{ appService.title }}</p>
   <button class="btn btn-success" (click)="collapsed = !collapsed" type="button"
     aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div [class.collapse]="collapsed" id="navbarToggleExternalContent">
-    <p class="text-secondary">Races</p>
+    <a href="javascript:void(0)" *ngFor="let entry of entries" (click)="onEntry(entry)">
+      {{ entry.label }}
+    </a>
   </div>
 </nav>
