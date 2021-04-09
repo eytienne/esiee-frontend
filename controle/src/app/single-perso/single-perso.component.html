@@ -1,0 +1,9 @@
+<h3 [ngStyle]="{ 'color': perso.type === 'gentil' ? 'green' : 'red' }">
+  {{ perso.name | uppercase }} détails
+</h3>
+<button (click)="perso.type = perso.type === 'gentil' ? 'mechant' : 'gentil'">Changer</button>
+<p>
+  id: {{ perso.id }}<br>
+  name: {{ perso.name }}
+</p>
+<button routerLink="/list" routerLinkActive="active">Retour à la liste</button>

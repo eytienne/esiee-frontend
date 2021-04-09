@@ -9,11 +9,4 @@ import { AppService } from './app.service';
 })
 export class AppComponent {
   title = 'controle';
-  persos: Personnage[];
-
-  constructor(public appService: AppService) {
-    appService.persos.subscribe((persos) => {
-      this.persos = persos;
-    });
-  }
 }

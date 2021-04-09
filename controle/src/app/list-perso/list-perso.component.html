@@ -1,0 +1,11 @@
+<h2>Liste des personnages</h2>
+<div style="border: 1px dashed black" *ngFor="let perso of persos; index as ii">
+  <h3 [ngStyle]="{ 'color': perso.type === 'gentil' ? 'green' : 'red' }">
+    {{ perso.name | uppercase }} <a routerLink="/single/{{ ii }}" routerLinkActive="active">détails</a>
+  </h3>
+  <button (click)="perso.type = perso.type === 'gentil' ? 'mechant' : 'gentil'">Changer</button>
+  <p>
+    id: {{ perso.id }}<br>
+    name: <input [(ngModel)]="perso.name">
+  </p>
+</div>
