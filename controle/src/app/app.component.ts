@@ -1,11 +1,5 @@
 import { Component } from '@angular/core';
-
-type PERSO_TYPE = 'gentil' | 'mechant';
-interface Personnage {
-  id: number;
-  name: string;
-  type: PERSO_TYPE;
-}
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -15,21 +9,5 @@ interface Personnage {
 export class AppComponent {
   title = 'controle';
 
-  persos: Personnage[] = [
-    {
-      id: 1,
-      name: "le personnage",
-      type: 'gentil'
-    },
-    {
-      id: 2,
-      name: "le personnage",
-      type: 'gentil'
-    },
-    {
-      id: 3,
-      name: "le personnage",
-      type: 'mechant'
-    }
-  ];
+  constructor(public appService: AppService) { }
 }

@@ -1,5 +1,5 @@
 <h1>Liste des personnages</h1>
-<div style="border: 1px dashed black" *ngFor="let perso of persos">
+<div style="border: 1px dashed black" *ngFor="let perso of appService.persos">
   <h3 [ngStyle]="{ 'color': perso.type === 'gentil' ? 'green' : 'red' }">
     {{ perso.name | uppercase }} détails
   </h3>
