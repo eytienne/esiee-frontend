@@ -9,11 +9,22 @@ import { CaracteristiquesComponent } from './caracteristiques/caracteristiques.c
 import { MenuComponent } from './menu/menu.component';
 import { RacesComponent } from './races/races.component';
 import { SingleRaceComponent } from './single-race/single-race.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const appRoutes: Routes = [
-  { path: 'races', component: RacesComponent },
-  { path: 'auth', component: AuthComponent },
-  { path: '', component: RacesComponent },
+  {
+    path: 'races',
+    canActivate: [AuthGuard],
+    component: RacesComponent
+  },
+  {
+    path: 'auth',
+    component: AuthComponent
+  },
+  {
+    path: '',
+    component: RacesComponent
+  },
 ];
 
 @NgModule({

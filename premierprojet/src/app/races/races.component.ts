@@ -13,11 +13,7 @@ export class RacesComponent implements OnInit {
   horses: any[];
   focusIndex = -1;
 
-  constructor(public racesService: RacesService, appService: AppService, router: Router) {
-    if (!appService.auth) {
-      router.navigate(["auth"]);
-    }
-  }
+  constructor(public racesService: RacesService) { }
 
   ngOnInit(): void {
     this.racesService.horsesSubject.subscribe(horses => {

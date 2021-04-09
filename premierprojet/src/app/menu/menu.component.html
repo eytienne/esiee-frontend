@@ -5,7 +5,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div [class.collapse]="collapsed" id="navbarToggleExternalContent">
-    <a href="javascript:void(0)" *ngFor="let entry of entries" (click)="onEntry(entry)">
+    <a href="javascript:void(0)" *ngFor="let entry of entries" [routerLink]="entry.link" routerLinkActive="active">
       {{ entry.label }}
     </a>
   </div>

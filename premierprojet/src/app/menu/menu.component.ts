@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { AppService } from '../app.service';
 
 interface MenuEntry {
-  path: string;
+  link: string;
   label: string;
 }
 @Component({
@@ -14,13 +14,9 @@ interface MenuEntry {
 export class MenuComponent {
   collapsed = true;
   entries: MenuEntry[] = [
-    { path: "races", label: "Races" },
-    { path: "auth", label: "Authentification" },
+    { link: "./races", label: "Races" },
+    { link: "./auth", label: "Authentification" },
   ]
 
-  constructor(public appService: AppService, private router: Router) { }
-
-  onEntry(entry: MenuEntry) {
-    this.router.navigate([entry.path]);
-  }
+  constructor(public appService: AppService) { }
 }
