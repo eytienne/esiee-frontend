@@ -1,0 +1,5 @@
+# LibreOffice related
+*.doc
+*.docx
+*.pptx
+.~lock*
