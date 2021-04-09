@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Personnage } from 'src/lib/Personnage';
 import { AppService } from './app.service';
 
 @Component({
@@ -8,6 +9,11 @@ import { AppService } from './app.service';
 })
 export class AppComponent {
   title = 'controle';
+  persos: Personnage[];
 
-  constructor(public appService: AppService) { }
+  constructor(public appService: AppService) {
+    appService.persos.subscribe((persos) => {
+      this.persos = persos;
+    });
+  }
 }

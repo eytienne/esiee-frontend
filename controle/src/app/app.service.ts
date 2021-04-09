@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Personnage } from 'src/lib/Personnage';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
-  persos: Personnage[] = [
+  private _persos: Personnage[] = [
     {
       id: 1,
       name: "le personnage",
@@ -22,4 +23,5 @@ export class AppService {
       type: 'mechant'
     }
   ];
+  persos: Observable<Personnage[]> = of(this._persos);
 }
