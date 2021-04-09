@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 
+type PERSO_TYPE = 'gentil' | 'mechant';
 interface Personnage {
   id: number;
   name: string;
+  type: PERSO_TYPE;
 }
 
 @Component({
@@ -11,18 +13,23 @@ interface Personnage {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'controle-un';
+  title = 'controle';
 
-  perso1: Personnage = {
-    id: 1,
-    name: "le personnage"
-  };
-  perso2: Personnage = {
-    id: 1,
-    name: "le personnage"
-  };
-  perso3: Personnage = {
-    id: 1,
-    name: "le personnage"
-  };
+  persos: Personnage[] = [
+    {
+      id: 1,
+      name: "le personnage",
+      type: 'gentil'
+    },
+    {
+      id: 2,
+      name: "le personnage",
+      type: 'gentil'
+    },
+    {
+      id: 3,
+      name: "le personnage",
+      type: 'mechant'
+    }
+  ];
 }
